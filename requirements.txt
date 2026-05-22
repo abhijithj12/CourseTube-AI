@@ -1,0 +1,11 @@
+crewai
+crewai-tools
+youtube-transcript-api
+pytubefix
+faster-whisper
+streamlit
+pydantic
+yt-dlp
+cerebras-cloud-sdk
+python-dotenv
+litellm

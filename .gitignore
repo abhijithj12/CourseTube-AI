@@ -1,0 +1,28 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Environment variables
+.env
+
+# Database
+db.sqlite3
+
+# Whisper audio files
+audio.mp3
+
+# UV package manager
+uv.lock
+
+# VS Code
+.vscode/
+
+# Streamlit cache
+.streamlit/

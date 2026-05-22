@@ -1,0 +1,19 @@
+[project]
+name = "coursetube-ai"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "cerebras-cloud-sdk>=1.67.0",
+    "crewai>=1.14.5",
+    "crewai-tools>=1.14.5",
+    "faster-whisper>=1.2.1",
+    "litellm>=1.85.1",
+    "pydantic>=2.12.5",
+    "python-dotenv>=1.2.2",
+    "pytubefix>=10.7.2",
+    "streamlit>=1.57.0",
+    "youtube-transcript-api>=1.2.4",
+    "yt-dlp>=2026.3.17",
+]

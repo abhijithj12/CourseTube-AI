@@ -1,0 +1,91 @@
+TranscriptionTask:
+  description: >
+    Extract the full transcript from this YouTube video: {video_url}
+    If the video has no captions use the Whisper tool to transcribe it.
+    Return the complete transcript as clean readable text.
+    Do not summarize. Return every single word spoken in the video.
+  expected_output: >
+    A complete word for word transcript of the video as a
+    single block of clean readable text. No timestamps needed.
+  
+
+MetadataTask:
+  description: >
+    Extract the following information from this YouTube video: {video_url}
+    - Video title
+    - Channel name
+    - Video duration
+    Return all of this as clean readable text.
+  expected_output: >
+    A clean summary of the video metadata containing title,
+    channel name, total duration in minutes.
+  
+
+StructureTask:
+  description: >
+    Read the transcript from the previous task carefully.
+    Divide the content into logical learning modules.
+    Each module should cover one clear topic.
+    Give each module a proper title and one sentence description.
+    Aim for 3 to 7 modules depending on content length.
+  expected_output: >
+    A numbered list of modules where each module has a title
+    and one sentence description of what it covers.
+    Example:
+    Module 1 - Introduction to Python: Covers what Python is and why it matters.
+    Module 2 - Variables and Data Types: Explains how to store and use data.
+  
+
+NotesTask:
+  description: >
+    Read the module structure from the previous task carefully.
+    Write detailed study notes for each module.
+    Cover every concept mentioned. Use simple language.
+    Use headings bullet points and examples where helpful.
+    A student should fully understand the topic just by
+    reading your notes without watching the video.
+  expected_output: >
+    Detailed study notes in clean markdown format.
+    Must include main concepts, explanations and at least
+    one example per concept.
+  
+
+QuizTask:
+  description: >
+    Read the study notes from the previous task carefully.
+    Create a quiz for each module.
+    Write 3 MCQ questions per module. Each question must have:
+    - One clearly correct answer
+    - Three wrong but believable options
+    Include the answer key at the end.
+  expected_output: >
+    3 MCQ questions per module with 4 options each and correct answer marked.
+    All formatted cleanly in markdown.
+  
+
+AssignmentTask:
+  description: >
+    Read the study notes from the previous task carefully.
+    Design one practical assignment for each module.
+    The assignment must have:
+    - A clear title
+    - Step by step instructions on what the student must do
+  expected_output: >
+    One complete assignment per module in markdown format containing
+    title, instructions
+  
+
+ReviewTask:
+  description: >
+    Read the notes, quiz and assignment from the previous tasks carefully.
+    Check for these problems:
+    - Wrong information in the notes
+    - Quiz questions that are unclear or have wrong answers
+    - Assignments that are too hard or too easy
+    - Anything missing that should be covered
+    Fix any problems you find directly in the content.
+  expected_output: >
+    The reviewed and corrected version of notes, quiz and
+    assignment in clean markdown. Add a short quality report
+    at the top stating what you checked and what you fixed.
+  
