@@ -1,9 +1,13 @@
 TranscriptionTask:
   description: >
     Extract the full transcript from this YouTube video: {video_url}
-    If the video has no captions use the Whisper tool to transcribe it.
+    First use the get_transcript tool.
+    If the tool returns transcript text, return it directly and do not use any other tool.
+    If the tool returns an error or fails, then use the transcribe_with_whisper tool.
+    Only use transcribe_with_whisper as a fallback when transcript extraction fails.
     Return the complete transcript as clean readable text.
-    Do not summarize. Return every single word spoken in the video.
+    Do not summarize.
+    Return every single word spoken in the video.
   expected_output: >
     A complete word for word transcript of the video as a
     single block of clean readable text. No timestamps needed.
