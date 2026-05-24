@@ -16,9 +16,11 @@ def get_transcript(video_url: str) -> str:
     try:
         yt = YouTube(video_url)
         video_id = yt.video_id
-        transcript_list = YouTubeTranscriptApi().fetch(video_id)
-        transcript = ' '.join([d.text for d in transcript_list])
-        return transcript
+        transcript_list = YouTubeTranscriptApi().list(video_id)
+        transcript = next(iter(transcript_list))
+        data = transcript.fetch()
+        text = ' '.join([d.text for d in data])
+        return text
 
     except Exception as e:
         return f"Error: {str(e)}"
